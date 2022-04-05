@@ -7,21 +7,21 @@
 }
 
 @font-face {
-  font-family: Open Sans;
+  font-family: Open-Sans;
   src: url(../fonts/OpenSans-Regular.woff);
   font-weight: 400;
   font-style: Regular;
 }
 
 @font-face {
-  font-family: Open Sans;
+  font-family: Open-Sans;
   src: url(../fonts/OpenSans-Bold.woff);
   font-weight: 700;
   font-style: Bold;
 }
 
 body {
-  font-family: Open Sans;
+  font-family: Open-Sans;
   margin: 0;
   color: #ffffff;
 }
@@ -105,13 +105,16 @@ body {
 
 .logo-img {
   box-sizing: border-box;
+  max-width: 270px;
 }
 
 @media (max-width: 640px) {
   .header-logo {
     padding: 70px 30px 10px;
     margin-top: 80px;
-    max-width: 270px;
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -291,6 +294,13 @@ body {
   color: #ffffff;
   font-size: 26px;
   padding: 0 15px 230px 15px;
+}
+
+@media (max-width: 640px) {
+  .title {
+    width: 328px;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 641px) and (max-width: 1199px) {
@@ -1408,18 +1418,20 @@ body {
 .popup {
   position: fixed;
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   display: none; 
   align-items: center;
   justify-content: center;
   z-index: 10;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .popup::before {
   content: " ";
   background-color: rgba(0, 0, 0, 0.9);
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
@@ -1430,8 +1442,9 @@ body {
 .popup-container {
   display: none;
   width: 390px;
+  margin: auto;
   box-sizing: border-box;
-  padding: 30px;
+  padding: 53px 30px;
   -webkit-appearance: none;
   -moz-appearance: none;
   position: relative;
@@ -1442,6 +1455,8 @@ body {
 @media (max-width: 640px) {
   .popup-container {
     max-width: 330px;
+    padding: 30px 25px;
+    width: 95%;
   }
 }
 
@@ -1584,6 +1599,12 @@ body {
 .field-textarea:focus {
   outline: none;
   border: 1px solid #b59f5b;
+}
+
+@media (max-width: 640px) {
+  .popup-button {
+    width: 278px;
+  }
 }
 
 .button-send {
