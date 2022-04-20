@@ -298,7 +298,7 @@ body {
 
 @media (max-width: 640px) {
   .title {
-    width: 328px;
+    max-width: 100%;
     margin: 0 auto;
   }
 }
@@ -428,7 +428,7 @@ body {
 
 @media (orientation: landscape) and (max-width: 640px) {
   .trend {
-     width: 48%;
+     width: 49.5%;
    }
    
    .trend:nth-child(2n - 1) {
@@ -650,6 +650,7 @@ body {
   .article-post:nth-child(-n+4)::after {
     content: "";
     display: block;
+    max-width: 330px;
     height: 3px;
     background-color: #eeeeee;
     margin-top: 23px;
@@ -660,7 +661,7 @@ body {
   .article-post:nth-child(-n+4)::after {
     content: "";
     display: block;
-    width: 392px;
+    max-width: 392px;
     height: 3px;
     background-color: #eeeeee;
     margin-top: 18px;
@@ -1418,14 +1419,15 @@ body {
 .popup {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: none; 
-  align-items: center;
-  justify-content: center;
   z-index: 10;
   overflow-y: auto;
   overflow-x: hidden;
+  padding-top: 55px;
+  padding-bottom: 35px;
 }
 
 .popup::before {
@@ -1441,22 +1443,21 @@ body {
 
 .popup-container {
   display: none;
-  width: 390px;
+  max-width: 390px;
+  width: 95%;
   margin: auto;
-  box-sizing: border-box;
-  padding: 53px 30px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   position: relative;
   background-color: #ffffff;
   z-index: 10;
 }
 
+.popup-header {
+  margin-top: 53px;
+}
+
 @media (max-width: 640px) {
-  .popup-container {
-    max-width: 330px;
-    padding: 30px 25px;
-    width: 95%;
+  .popup-header {
+    margin-top: 30px;
   }
 }
 
@@ -1479,13 +1480,19 @@ body {
   background-color: #e1d9bd;
 }
 
-.popup-form {
-  width: 330px;
+.popup-content {
+  padding: 0 30px 53px;
+}
+
+@media (max-width: 640px) {
+  .popup-content {
+    padding: 0 15px 30px;
+  }
 }
 
 .label-text {
   display: block;
-  width: 320px;
+  width: 100%;
   margin-top: 33px;
   margin-bottom: 5px;
   font-size: 13px;
@@ -1502,7 +1509,8 @@ body {
 }
 
 .popup-select {
-  width: 330px;
+  max-width: 390px;
+  width: 100%;
   height: 48px;
   display: inline-block;
   box-sizing: border-box;
@@ -1518,12 +1526,6 @@ body {
   background-color: #f4f7f6;
   font-size: 13px;
   color: #333333;
-}
-
-@media (max-width: 640px) {
-  .popup-select {
-    max-width: 278px;
-  }
 }
 
 .popup-select:focus {
@@ -1557,12 +1559,6 @@ body {
   margin-top: 10px;
 }
 
-@media (max-width: 640px) {
-  .popup-form-group {
-    max-width: 278px;
-  }
-}
-
 .field-label {
   color: #000000;
 }
@@ -1580,7 +1576,8 @@ body {
 
 .field-textarea {
   box-sizing: border-box;
-  width: 330px;
+  max-width: 330px;
+  width: 100%;
   height: 131px;
   border: none;
   background-color: #f4f7f6;
@@ -1588,12 +1585,6 @@ body {
   font-size: 13px;
   resize: none;
   margin-top: 5px;
-}
-
-@media (max-width: 640px) {
-  .field-textarea {
-    max-width: 278px;
-  }
 }
 
 .field-textarea:focus {
@@ -1611,6 +1602,7 @@ body {
   text-transform: uppercase;
   font-size: 14px;
   margin-top: 18px;
+  max-width: 328px;
   width: 100%;
   height: 48px;
   border: none;
@@ -1618,12 +1610,6 @@ body {
   background-color: #b59f5b;
   cursor: pointer;
   font-weight: 700;
-}
-
-@media (max-width: 640px) {
-  .button-send {
-    max-width: 278px;
-  }
 }
 
 .button-send:hover {
